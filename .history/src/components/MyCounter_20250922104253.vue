@@ -1,0 +1,23 @@
+<template>
+  <section>
+    <h3>Counter: {{  counter  }}</h3>
+    <h3>Square: {{  suqareCounter  }}</h3>
+
+    <div>
+      <button @click="incrementCounter">+1</button>
+      <button @click="decrementCounter">-1</button>
+    </div>
+
+  </section>
+</template>
+
+<script lang="ts" setup>
+import { computed, ref } from 'vue';
+
+const counter = ref(2);
+const suqareCounter = computed(() => counter.value * counter.value);
+
+const incrementCounter = () => counter.value++;
+const decrementCounter = () => counter.value--;
+
+</script>
